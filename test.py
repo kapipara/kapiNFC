@@ -6,10 +6,19 @@ import nfc
 def on_connect(tag):
     tmp = str(tag)
     splitOut = tmp.replace('=',' ').split()
-    print splitOut[2]
+    
+    flag = 0
+
+    for item in splitOut:
+        if flag == 1:
+            print item
+            flag = 0
+        if item.find("ID") is not -1:
+            flag = 1
+
 
 def on_startup(tag):
-    print("[NFCreader] : ready")
+    print("[NFC reader] : ready")
     return tag
 
 def main():
