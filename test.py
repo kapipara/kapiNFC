@@ -16,7 +16,6 @@ def on_connect(tag):
         if item.find("ID") is not -1:
             flag = 1
 
-
 def on_startup(tag):
     print("[NFC reader] : ready")
     return tag
